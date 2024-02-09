@@ -8,7 +8,14 @@ cursor = connection.cursor()
 
 
 # Add Query 1
-cursor.execute('SELECT * FROM "artist"')
+#cursor.execute('SELECT * FROM "artist"')
+#cursor.execute('SELECT "name" FROM "artist"')
+# cursor.execute('SELECT * FROM "artist" WHERE "name" = %s', ["Queen"])
+# cursor.execute('SELECT * FROM "artist" WHERE "artist_id" = %s', [51])
+# cursor.execute('SELECT * FROM "album" WHERE "artist_id" = %s', [51])
+# cursor.execute('SELECT * FROM "track" WHERE "composer" = %s', ["Queen"])
+
+cursor.execute('SELECT * FROM "artist" WHERE "name" = %s', ["ndubz"])
 
 
 # fetch the results multiple
