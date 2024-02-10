@@ -72,11 +72,20 @@ michael_bradbury = Programmer (
     famous_for = "Java Developer"
 )
 
+colin_cowie = Programmer (
+    first_name = "Colin",
+    last_name = "Cowie",
+    gender = "M",
+    nationality = "British",
+    famous_for = "Wiring"
+)
+
 # # # Add each instance of our programmer to the session
 # session.add(ada_lovelace)
 # session.add(martin_bradbury)
 # session.add(donna_bradbury)
 # session.add(michael_bradbury)
+# session.add(colin_cowie)
 
 # # # Commit our session to the database
 # session.commit()
