@@ -21,6 +21,17 @@ class Programmer(base):
     famous_for = Column(String)
 
 
+# My turn at creating a new table
+class Pets(base):
+    __tablename__ = "Pets"
+    id = Column(Integer, primary_key=True)
+    first_name = Column(String)
+    last_name = Column(String)
+    fav_pet = Column(String)
+    number_of_pets = Column(Integer)
+    pet_name = Column(String)
+
+
 
 
 
@@ -48,13 +59,13 @@ ada_lovelace = Programmer (
     famous_for = "First Programmer"
 )
 
-martin_bradbury = Programmer (
-    first_name = "Martin",
-    last_name = "Bradbury",
-    gender = "M",
-    nationality = "British",
-    famous_for = "CI Student"
-)
+# martin_bradbury = Programmer (
+#     first_name = "Martin",
+#     last_name = "Bradbury",
+#     gender = "M",
+#     nationality = "British",
+#     famous_for = "CI Student"
+# )
 
 donna_bradbury = Programmer (
     first_name = "Donna",
@@ -87,6 +98,24 @@ test_person = Programmer (
     nationality = "Spanish",
     famous_for = "Tester"
 )
+
+# Creating person in Pet table.
+martin_bradbury = Pets (
+    first_name = "Martin",
+    last_name = "Bradbury",
+    fav_pet = "Penguin",
+    number_of_pets = 5,
+    pet_name = "Jonathan"
+)
+
+# session.add(martin_bradbury)
+# session.commit()
+
+
+# pets = session.query(Pets)
+# for pet in pets:
+#     session.delete(pet)
+#     session.commit()
 
 # # # Add each instance of our programmer to the session
 # session.add(ada_lovelace)
@@ -145,14 +174,25 @@ test_person = Programmer (
 
 # Create a new vairable to query the database
 
-programmers = session.query(Programmer)
-for programmer in programmers:  
+# programmers = session.query(Programmer)
+# for programmer in programmers:  
+#     print(
+#         programmer.id,
+#         programmer.first_name + " " + programmer.last_name,
+#         programmer.gender,
+#         programmer.nationality,
+#         programmer.famous_for,
+#          sep=" | "
+#         )
+
+# Printing pet database
+pet_owners = session.query(Pets)
+for owners in pet_owners:  
     print(
-        programmer.id,
-        programmer.first_name + " " + programmer.last_name,
-        programmer.gender,
-        programmer.nationality,
-        programmer.famous_for,
+        owners.id,
+        owners.first_name + " " + owners.last_name,
+        owners.fav_pet ,
+        owners.number_of_pets,
+        owners.pet_name,
          sep=" | "
         )
-
