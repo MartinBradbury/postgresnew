@@ -80,12 +80,42 @@ colin_cowie = Programmer (
     famous_for = "Wiring"
 )
 
+test_person = Programmer (
+    first_name = "Test",
+    last_name = "Person",
+    gender = "F",
+    nationality = "Spanish",
+    famous_for = "Tester"
+)
+
 # # # Add each instance of our programmer to the session
 # session.add(ada_lovelace)
 # session.add(martin_bradbury)
 # session.add(donna_bradbury)
 # session.add(michael_bradbury)
 # session.add(colin_cowie)
+# session.add(test_person)
+
+
+
+# Updating a single record
+# programmer = session.query(Programmer).filter_by(id=7).first()
+# programmer.famous_for="Update"
+
+
+# Updating multiple records
+people = session.query(Programmer)
+for person in people:
+    if person.gender == "F":
+        person.gender = "Female"
+    elif person.gender == "M":
+        person.gender = "Male"
+    else:
+        print("No gender assigned")
+    session.commit()
+
+
+
 
 # # # Commit our session to the database
 # session.commit()
