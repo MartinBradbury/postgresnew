@@ -104,17 +104,38 @@ test_person = Programmer (
 
 
 # Updating multiple records
-people = session.query(Programmer)
-for person in people:
-    if person.gender == "F":
-        person.gender = "Female"
-    elif person.gender == "M":
-        person.gender = "Male"
-    else:
-        print("No gender assigned")
-    session.commit()
+# people = session.query(Programmer)
+# for person in people:
+#     if person.gender == "F":
+#         person.gender = "Female"
+#     elif person.gender == "M":
+#         person.gender = "Male"
+#     else:
+#         print("No gender assigned")
+#     session.commit()
 
+# Deleting single programmer
+# fname = input("Enter First Name")
+# lname = input("Enter Last Name")
+# programmer = session.query(Programmer).filter_by(first_name=fname, last_name=lname).first()
+# # Defensive programming
+# if programmer is not None:
+#     print("Programmer found: ", programmer.first_name + " " + programmer.last_name)
+#     confirmation = input("Are you sure you want to delete (y/n)?")
+#     if confirmation.lower() == "y":
+#         session.delete(programmer)
+#         session.commit()
+#         print("Deleted")
+#     else:
+#         print("User not deleted")
+# else:
+#     print("Programmer not found")
 
+# To Delete all records
+# programmers = session.query(Programmer)
+# for programmer in programmers:
+#     session.delete(programmer)
+#     session.commit()
 
 
 # # # Commit our session to the database
